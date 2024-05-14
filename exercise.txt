@@ -1,0 +1,3 @@
+1) develope EMI calculator.
+2) develope BMI calculator.
+

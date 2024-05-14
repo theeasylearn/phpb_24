@@ -1,0 +1,21 @@
+there many method to submit data to the servers.
+but two methods are very important 
+get and post
+post
+--------------------------------------------------
+post method send two request to the server 
+    one request to display other web page to the user 
+    another request is send to server to submit data 
+    data submitted via post method is not visiable to user or software
+    confidential data should be submit via post method
+    there is no limit on amount of data we can submit via post method 
+    we can even submit file type of input using post method 
+
+get
+---------------------------------------------------
+    in get method browser send request to the server to display other page & also submit data in same request.
+     data submitted via get method is visiable to user or software
+     should be used submit non-confidential text data via get method
+     maximum of 2KB of data can be submitted.
+
+
