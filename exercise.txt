@@ -1,3 +1,10 @@
 1) develope EMI calculator.
 2) develope BMI calculator.
 
+3) create php program that will display all asian countries name as html list.
+    create an array which has all country name and the do as above 
+
+4) create php program that has numeric array which should display 
+    square and qube of all the values as html list 
+
+    
