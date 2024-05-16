@@ -7,4 +7,5 @@
 4) create php program that has numeric array which should display 
     square and qube of all the values as html list 
 
+5) create php program that has array of all the ipl teams. each team has name, player names, home ground, and trophy win history.
     
