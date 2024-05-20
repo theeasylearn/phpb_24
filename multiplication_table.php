@@ -22,8 +22,8 @@
             font-size: 18px;
             padding: 10px;
         }
-        .multiply
-        {
+
+        .multiply {
             margin-top: 20px;
             margin-left: 50px;
             margin-right: 50px;
@@ -33,84 +33,67 @@
 
 <body>
     <div class="gray">
-        <table width='100%'>
-            <tr>
-                <td width='30%'>Multiplication Table Generator</td>
-                <td>
-                    <input type="number" name="start" id="start" placeholder="start value" />
-                </td>
-                <td>
-                    <input type="number" name="stop" id="stop" placeholder="stop value" />
-                </td>
-                <td>
-                    <label for="while">
-                        <input id="while" type="radio" name="loop" value="1"> while loop
-                    </label>
-                    <label for="for">
-                        <input id="for" type="radio" name="loop" value="2"> for loop
-                    </label>
-                    <label for="dowhile">
-                        <input id="dowhile" type="radio" name="loop" value="3"> do while loop
-                    </label>
-                </td>
-                <td align="right">
-                    <input type="submit" value="generate" class="blue-button" />
-                </td>
-            </tr>
-        </table>
+        <form method="post" action="" >
+            <table width='100%'>
+                <tr>
+                    <td width='30%'>Multiplication Table Generator</td>
+                    <td>
+                        <input type="number" name="start" id="start" placeholder="start value" required />
+                    </td>
+                    <td>
+                        <input type="number" name="stop" id="stop" placeholder="stop value" required />
+                    </td>
+                    <td>
+                        <label for="while">
+                            <input id="while" type="radio" name="loop" value="1"> while loop
+                        </label>
+                        <label for="for">
+                            <input id="for" type="radio" name="loop" value="2"> for loop
+                        </label>
+                        <label for="dowhile">
+                            <input id="dowhile" type="radio" name="loop" value="3"> do while loop
+                        </label>
+                    </td>
+                    <td align="right">
+                        <input type="submit" name="submit" value="generate" class="blue-button" />
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
 
     <div class="multiply">
-        <table width='15%' border="1" cellpadding='10'>
+        <table width='100%' border="1">
             <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>=</td>
-                <td>1</td>
+                <?php
+                    if(isset($_POST['submit'])==true)
+                    {
+                        $i = $_POST['start'];
+                        while ($i <= $_POST['stop']) { //outer while loop
+                            echo "<td>
+                            <table width='100%' cellpadding='10'>"; 
+                            $j=1;
+                            while($j<=10) //inner while loop
+                            {
+                                $temp = $i * $j;
+                                echo "<tr>
+                                <td>$i</td>
+                                <td>$j</td>
+                                <td>=</td>
+                                <td>$temp</td>
+                            </tr>";
+                            $j++;
+                            }
+                                
+        
+                            echo "</table>
+                        </td>";
+                            $i++;
+                        }
+                    }
+                ?>
+
             </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>=</td>
-                <td>2</td>
-            </tr>
-            
         </table>
     </div>
 </body>
