@@ -49,8 +49,6 @@
         $merged_array= array_merge($vegetables,$grains);
         echo "<br/> merged array has <br/>";
         print_r($merged_array);
-
-        
     ?>
 </body>
 </html>
