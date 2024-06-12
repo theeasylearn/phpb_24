@@ -1,0 +1,10 @@
+1) create class Foot which has one instance variable inch. it store inches via contructor. it also has method getFoot which return foot of instance variable inch. 
+
+create class Meter which extends Foot class and it has method getMeter which return meter of parent class instance variable inch
+
+2) Temperature and Kelvin Classes:
+
+    Temperature class stores temperature in Celsius and converts it to Fahrenheit.
+    Kelvin class extends Temperature and converts Celsius to Kelvin.
+
+    
