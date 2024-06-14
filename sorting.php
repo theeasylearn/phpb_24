@@ -1,5 +1,5 @@
 <?php
-array(
+$medicines = array(
     "2-DPMP",
     "2C family",
     "5-IT",
@@ -48,5 +48,11 @@ array(
     "Tobacco",
     "Tramadol",
     "Vapes"
-)
+);
+    $word_to_search = 'Ni';
+    foreach($medicines as $medicine)
+    {
+        if(strpos($medicine,$word_to_search) === 0)
+            echo "<br/> $medicine";
+    }
 ?>

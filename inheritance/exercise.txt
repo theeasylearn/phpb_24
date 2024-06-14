@@ -7,4 +7,5 @@ create class Meter which extends Foot class and it has method getMeter which ret
     Temperature class stores temperature in Celsius and converts it to Fahrenheit.
     Kelvin class extends Temperature and converts Celsius to Kelvin.
 
-    
+3) create KM which should exteds Meter class create in exercise 1. this class should return KM of given inches. 
+
