@@ -1,0 +1,21 @@
+sql
+1) add data 
+    -> insert into table_name values(value1,value2,value3....)
+
+    -> insert into table_name(student_name,student_class,student_mobile,student_gender) values(value1,value2....)
+
+2) fetch data
+
+    -> select * from table_name
+
+    -> select field_name,field_name... from table_name
+
+    -> select * from student where condition
+
+3) update data
+
+    -> update table_name set field_name=value,field_name=value.... where condition
+
+4) delete data
+
+    -> delete from table_name where condition    
