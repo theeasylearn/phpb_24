@@ -1,4 +1,14 @@
 sql
+
+create table
+    -> create table table_name
+
+delete table
+    -> drop table table_name
+
+delete all record 
+    -> truncate table table_name
+
 1) add data 
     -> insert into table_name values(value1,value2,value3....)
 
