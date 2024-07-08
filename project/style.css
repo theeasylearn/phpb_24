@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*
+{
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color:#F78c56;
+}
+h1, h2, h3, h4, h5, h6, th, a:link, button 
+{
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+}
+p, div, span, td, li,input
+{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+body 
+{
+    background-color: #FAEBCE;
+}
+#menu
+{
+    background-color: #f6c500;
+    padding:10px;
+    margin-bottom: 20px;
+}
+#menu>ul 
+{
+    display: flex;
+    list-style-type: none;
+    justify-content: end;
+    gap:20px;
+}
+#menu>ul>li>a:link 
+{
+    color:white;
+}
+#heading
+{
+    background-color: #F78c56;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    padding:10px;
+}
+#data
+{
+    width:90%;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid #F78c56;
+    border-collapse: collapse;
+}
+#data td, #data th 
+{
+    border: 1px solid #F78c56;
+    padding:5px;
+}
+#data th 
+{
+    background-color: #95680f;
+    color:white;    
+}
+#heading>h2 
+{
+    color: white !important;
+    font-size: 1.5rem;
+}
