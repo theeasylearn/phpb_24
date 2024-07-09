@@ -10,6 +10,7 @@
 
 <body>
     <div id="menu">
+        <h1>E-Lkekha</h1>
         <ul>
             <li><a href="#">Sample Link</a></li>
             <li><a href="#">Sample Link</a></li>
@@ -22,6 +23,7 @@
     </div>
     <div id="heading">
         <h2>Module Heading</h2>
+        <a href="#" class="btn">Add Batch</a>
     </div>
     <table id="data">
         <thead>
@@ -39,7 +41,24 @@
                 <td>Content</td>
                 <td>Content</td>
             </tr>
-            
+            <tr>
+                <td>Content</td>
+                <td>Content</td>
+                <td>Content</td>
+                <td>Content</td>
+            </tr>
+            <tr>
+                <td>Content</td>
+                <td>Content</td>
+                <td>Content</td>
+                <td>Content</td>
+            </tr>
+            <tr>
+                <td>Content</td>
+                <td>Content</td>
+                <td>Content</td>
+                <td>Content</td>
+            </tr>
         </tbody>
     </table>
 </body>
