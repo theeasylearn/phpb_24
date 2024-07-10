@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+<?php 
+    require_once('inc/header-part.php');
+?>
 </head>
 
 <body>
-    <div id="menu">
-        <h1>E-Lkekha</h1>
-        <ul>
-            <li><a href="#">Sample Link</a></li>
-            <li><a href="#">Sample Link</a></li>
-            <li><a href="#">Sample Link</a></li>
-            <li><a href="#">Sample Link</a></li>
-            <li><a href="#">Sample Link</a></li>
-            <li><a href="#">Sample Link</a></li>
-            <li><a href="#">Sample Link</a></li>
-        </ul>
-    </div>
+    <?php 
+        require_once('inc/menu.php');
+    ?>
     <div id="heading">
         <h2>Module Heading</h2>
         <a href="#" class="btn">Add Batch</a>
@@ -61,6 +47,9 @@
             </tr>
         </tbody>
     </table>
+<?php 
+    require_once("inc/footer.php"); 
+?>
 </body>
 
 </html>
