@@ -44,7 +44,7 @@ body
     justify-content: end;
     gap:20px;
 }
-#menu>ul>li>a:link 
+#menu>ul>li>a:link , #menu>ul>li>a:visited
 {
     color:white;
 }
