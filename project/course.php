@@ -7,10 +7,17 @@ require_once('inc/header-part.php');
     <?php
     require_once('inc/menu.php');
     ?>
+    <?php
+    if (isset($_REQUEST['success']) == true)
+        echo "<div class='success'>Success! {$_REQUEST['success']}</div>";
+    else if (isset($_REQUEST['error']) == true)
+        echo "<div class='error'>error! {$_REQUEST['error']}</div>";
+    ?>
     <div id="heading">
         <h2>Course</h2>
         <a href="add_course.php" class="btn">Add Course</a>
     </div>
+
     <table id="data">
         <thead>
             <tr>
@@ -23,6 +30,7 @@ require_once('inc/header-part.php');
             </tr>
         </thead>
         <tbody>
+
             <tr>
                 <td>1</td>
                 <td>PSI</td>
