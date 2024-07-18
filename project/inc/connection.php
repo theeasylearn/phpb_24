@@ -17,9 +17,9 @@ function LogError($error)
     //it writes content into file
     file_put_contents(FILENAME, $ErrorMessage, FILE_APPEND | LOCK_EX);
     if (ISDEBUG == true)
-        echo $ErrorMessage;
-    else
-        echo "oops, something went wrong, we are trying to findout the problem.please come after sometime";
+        $_SESSION['error'] = $ErrorMessage;
+    else 
+        $_SESSION['error'] = 'oops, something went wrong, we are trying to findout the problem.please come after sometime';
     //exit(); //terminate php script
 }
 $db = null; //object

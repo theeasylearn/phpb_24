@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('inc/header-part.php');
 ?>
 </head>
@@ -6,12 +7,16 @@ require_once('inc/header-part.php');
 <body>
     <?php
     require_once('inc/menu.php');
-    ?>
-    <?php
-    if (isset($_REQUEST['success']) == true)
-        echo "<div class='success'>Success! {$_REQUEST['success']}</div>";
-    else if (isset($_REQUEST['error']) == true)
-        echo "<div class='error'>error! {$_REQUEST['error']}</div>";
+    if (isset($_SESSION['success']) == true) 
+    {
+        echo "<div class='success'>Success! {$_SESSION['success']}</div>";
+        unset($_SESSION['success']);
+    } 
+    else if (isset($_SESSION['error']) == true) 
+    {
+        echo "<div class='error'>error      ! {$_SESSION['error']}</div>";
+        unset($_SESSION['error']);
+    }
     ?>
     <div id="heading">
         <h2>Course</h2>

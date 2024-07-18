@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../inc/connection.php");
 // var_dump($_POST);
 try {
@@ -14,10 +15,15 @@ try {
     //query execute
     $cmd->execute();
     $courseid = $db->lastInsertId();
-    $msg = "Course added with id $courseid";
-    header("location:../course.php?success=$msg");
+    // $msg = "Course added with id $courseid";
+    // header("location:../course.php?success=$msg");
+
+    $_SESSION['success'] = "Course added with id $courseid";
+    header("location:../course.php");
 } catch (PDOException $error) {
     LogError($error);
-    $msg = 'oops, something went wrong, we are trying to findout the problem.please come after sometime';
-    header("location:../course.php?error=$msg");
+    // $msg = 'oops, something went wrong, we are trying to findout the problem.please come after sometime';
+    // header("location:../course.php?error=$msg");
+    // or 
+    header("location:../course.php");
 }
