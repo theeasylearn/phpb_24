@@ -19,7 +19,7 @@ require_once('inc/header-part.php');
                 <tr>
                     <td width="30%">Select Course</td>
                     <td width="70%">
-                        <select name="courseid" id="courseid">
+                        <select name="courseid" id="courseid" required>
                             <option value="">Select course</option>
                             <option value="1">PSI</option>
                             <option value="2">ASI</option>

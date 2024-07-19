@@ -6,3 +6,4 @@
  Error Code 42S02  ErrorDetail  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'phpb_24.course11' doesn't exist on Thu 18-07-2024 08:46:29PM in file C:\wamp64\www\phpb_24\project\submit\insert_course.php at lineno 16
  Error Code 42S02  ErrorDetail  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'phpb_24.course11' doesn't exist on Thu 18-07-2024 08:48:11PM in file C:\wamp64\www\phpb_24\project\submit\insert_course.php at lineno 16
  Error Code 42S02  ErrorDetail  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'phpb_24.course11' doesn't exist on Thu 18-07-2024 08:48:44PM in file C:\wamp64\www\phpb_24\project\submit\insert_course.php at lineno 16
+ Error Code 42S22  ErrorDetail  SQLSTATE[42S22]: Column not found: 1054 Unknown column 'startdate' in 'field list' on Fri 19-07-2024 08:36:58PM in file C:\wamp64\www\phpb_24\project\submit\insert_batch.php at lineno 13

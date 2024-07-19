@@ -1,11 +1,14 @@
 <?php
+session_start();
 require_once('inc/header-part.php');
 ?>
 </head>
 
 <body>
     <?php
-    require_once('inc/menu.php');
+        require_once('inc/menu.php');
+        require_once('inc/message.php');
+
     ?>
     <div id="heading">
         <h2>Batch </h2>

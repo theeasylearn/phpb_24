@@ -1,12 +1,14 @@
 <?php
-require_once('inc/header-part.php');
+    session_start();
+    require_once('inc/header-part.php');
 ?>
 <link rel="stylesheet" href="dist/css/lightbox.min.css">
 </head>
 
 <body>
     <?php
-    require_once('inc/menu.php');
+        require_once('inc/menu.php');
+        require_once('inc/message.php');
     ?>
     <div id="heading">
         <h2>Teacher </h2>
