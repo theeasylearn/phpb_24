@@ -7,7 +7,7 @@ require_once('inc/header-part.php');
 
 <body>
     <?php
-    require_once('inc/menu.php');
+         require_once('inc/menu.php');
     ?>
     <div id="heading">
         <h2>Batch - Add batch</h2>
