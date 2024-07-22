@@ -23,7 +23,6 @@ require_once('inc/header-part.php');
         <h2>Course</h2>
         <a href="add_course.php" class="btn">Add Course</a>
     </div>
-
     <table id="data">
         <thead>
             <tr>
@@ -44,7 +43,7 @@ require_once('inc/header-part.php');
                         <td><?php echo $row['title'] ?></td>
                         <td><?php echo $row['fees'] ?></td>
                         <td><?php echo $row['duration'] ?> Days</td>
-                        <td>L<?php echo $row['description'] ?></td>
+                        <td><?php echo $row['description'] ?></td>
                         <td>
                             <a href=""><i class="fa fa-pencil fa-2x"></i></a>
                             <a href=""><i class="fa fa-trash fa-2x"></i></a>
