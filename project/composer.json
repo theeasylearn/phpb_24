@@ -1,0 +1,17 @@
+{
+    "name": "lenovo/project",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "theeasylearn",
+            "email": "theeasylearn@gmail.com"
+        }
+    ],
+    "require": {
+        "components/jquery": "^3.7"
+    }
+}
