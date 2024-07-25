@@ -12,6 +12,7 @@
         }
     ],
     "require": {
-        "components/jquery": "^3.7"
+        "components/jquery": "^3.7",
+        "datatables.net/datatables.net-dt": "^2.1"
     }
 }
