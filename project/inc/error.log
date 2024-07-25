@@ -58,3 +58,4 @@
  Error Code 42S02  ErrorDetail  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'phpb_24.batch1' doesn't exist on Mon 22-07-2024 08:33:32PM in file C:\wamp64\www\phpb_24\project\batch.php at lineno 15
  Error Code 42S22  ErrorDetail  SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id11' in 'order clause' on Mon 22-07-2024 08:33:41PM in file C:\wamp64\www\phpb_24\project\batch.php at lineno 15
  Error Code 2054  ErrorDetail  SQLSTATE[HY000] [2054] Server sent charset unknown to the client. Please, report to the developers on Mon 22-07-2024 08:50:54PM in file C:\wamp64\www\phpb_24\project\inc\connection.php at lineno 27
+ Error Code 42S02  ErrorDetail  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'phpb_24.lecturess' doesn't exist on Thu 25-07-2024 08:39:03PM in file C:\wamp64\www\phpb_24\project\lecture.php at lineno 16

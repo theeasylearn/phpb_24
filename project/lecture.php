@@ -1,14 +1,25 @@
 <?php
-    session_start();
-    require_once('inc/header-part.php');
+session_start();
+require_once('inc/connection.php');
+require_once('inc/header-part.php');
 ?>
 <link rel="stylesheet" href="dist/css/lightbox.min.css">
+<link rel="stylesheet" href="//cdn.datatables.net/2.1.2/css/dataTables.dataTables.min.css">
 </head>
 
 <body>
     <?php
-         require_once('inc/menu.php');
-         require_once('inc/message.php');
+    require_once('inc/menu.php');
+    require_once('inc/message.php');
+    try {
+        $sql = "select l.*,name,title,classtime from lecture l,teacher t,subject s,  batch b where l.teacherid=t.id and l.subjectid=s.id and b.id=l.batchid order by l.id desc";
+        $cmd = $db->prepare($sql);
+        $cmd->execute();
+        $table = $cmd->fetchAll();
+    } catch (PDOException $error) {
+        LogError($error);
+        require('inc/message.php');
+    }
     ?>
     <div id="heading">
         <h2>Lecture </h2>
@@ -24,29 +35,39 @@
                 <th>Teacher</th>
                 <th>Subject</th>
                 <th>Batch</th>
-               
+
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Fri 12-07-1985</td>
-                <td>120 Minute</td>
-                <td>1000</td>
-                <td>Ghanshyam</td>
-                <td>History</td>
-                <td>7 to 9</td>
-               
-            </tr>
-            <!-- Additional rows can be added here -->
+            <?php
+            $output = '';
+            require_once("inc/common_functions.php");
+            foreach ($table as $row) {
+                extract($row);
+                $mydate = toDMY($lecturedate);
+                $output .= " <tr>
+                <td>$id</td>
+                <td>$mydate</td>
+                <td>$duration Minute</td>
+                <td>$amount</td>
+                <td>$name</td>
+                <td>$title</td>
+                <td>$classtime</td>
+                </tr>";
+            }
+            echo $output;
+            ?>
         </tbody>
     </table>
-
     <?php
     require_once("inc/footer.php");
     ?>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
-
+    <script src="//cdn.datatables.net/2.1.2/js/dataTables.min.js"></script>
+    <script>
+        //plugin activation code
+        let table = new DataTable('#data');
+    </script>
 </body>
 
 </html>
