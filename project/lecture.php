@@ -1,10 +1,13 @@
 <?php
 session_start();
+require 'vendor/autoload.php';
 require_once('inc/connection.php');
 require_once('inc/header-part.php');
 ?>
 <link rel="stylesheet" href="dist/css/lightbox.min.css">
-<link rel="stylesheet" href="//cdn.datatables.net/2.1.2/css/dataTables.dataTables.min.css">
+<!-- <link rel="stylesheet" href="//cdn.datatables.net/2.1.2/css/dataTables.dataTables.min.css"> -->
+<link rel="stylesheet" href="vendor/datatables.net/datatables.net-dt/css/dataTables.dataTables.min.css" />
+
 </head>
 
 <body>
@@ -63,10 +66,15 @@ require_once('inc/header-part.php');
     require_once("inc/footer.php");
     ?>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="//cdn.datatables.net/2.1.2/js/dataTables.min.js"></script>
+    <!-- <script src="//cdn.datatables.net/2.1.2/js/dataTables.min.js"></script> -->
+    <script src="vendor/components/jquery/jquery.js"></script>
+    <script src="vendor/datatables.net/datatables.net/js/dataTables.js"></script>
+
     <script>
         //plugin activation code
-        let table = new DataTable('#data');
+        $(document).ready(function() {
+            $('#data').DataTable();
+        });
     </script>
 </body>
 

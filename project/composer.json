@@ -1,18 +1,18 @@
-{
-    "name": "lenovo/project",
-    "autoload": {
-        "psr-4": {
-            "Lenovo\\Project\\": "src/"
+    {
+        "name": "lenovo/project",
+        "autoload": {
+            "psr-4": {
+                "Lenovo\\Project\\": "src/"
+            }
+        },
+        "authors": [
+            {
+                "name": "theeasylearn",
+                "email": "theeasylearn@gmail.com"
+            }
+        ],
+        "require": {
+            "components/jquery": "^3.7",
+            "datatables.net/datatables.net-dt": "^2.1"
         }
-    },
-    "authors": [
-        {
-            "name": "theeasylearn",
-            "email": "theeasylearn@gmail.com"
-        }
-    ],
-    "require": {
-        "components/jquery": "^3.7",
-        "datatables.net/datatables.net-dt": "^2.1"
     }
-}

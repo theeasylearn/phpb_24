@@ -1,18 +1,41 @@
 <?php
-require_once('inc/header-part.php');
+    session_start();
+    require_once('inc/connection.php');
+    require_once('inc/header-part.php');
 ?>
 </head>
 
 <body>
     <?php
-    require_once('inc/menu.php');
+        require_once('inc/menu.php');
+        if(isset($_POST['submit'])==true)
+        {
+            echo "it is input submit";
+            extract($_POST);
+            try 
+            {
+                $sql = "SELECT * FROM `lecture` where lecturedate>=? and lecturedate<=? and batchid=?";
+                $cmd = $db->prepare($sql);
+                $cmd->bindParam(1,$startdate);
+                $cmd->bindParam(2,$enddate);
+                $cmd->bindParam(3,$batchid);
+                $cmd->execute();
+                $table = $cmd->fetchAll();
+            }
+            catch(PDOException $error)
+            {
+                LogError($error);
+                require_once("message.php");
+            }
+        }
     ?>
     <div id="heading">
         <h2>Batch Report</h2>
         <a href="payment_report.php" class="btn">Payment report</a>
     </div>
     <table id="data">
-        <thead>
+        <form action="report.php" method="post">
+              <thead>
             <tr>
                 <td colspan="2" align="center">
                     <label for="batchid">Select Batch</label> <br />
@@ -32,7 +55,7 @@ require_once('inc/header-part.php');
                     <input type="date" name="enddate" id="enddate" required />
                 </td>
                 <td>
-                    <input type="submit" value="search" class="save" /> <br/>
+                    <input type="submit" value="search" class="save" name="submit" /> <br/>
                     <input type="reset" value="clear all" class="clear" />
                 </td>
             </tr>
@@ -46,21 +69,29 @@ require_once('inc/header-part.php');
                 <th>is paid</th>
             </tr>
         </thead>
+        </form>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>15-07-2024</td>
-                <td>Ghanshyam pandye</td>
-                <td>History</td>
-                <td>120 Minute</td>
-                <td>1000</td>
-                <td>No</td>
-            </tr>
+            <?php 
+                $temp = '';
+                foreach($table as $row)
+                {
+                    $temp+= "<tr>
+                    <td>1</td>
+                    <td>15-07-2024</td>
+                    <td>Ghanshyam pandye</td>
+                    <td>History</td>
+                    <td>120 Minute</td>
+                    <td>1000</td>
+                    <td>No</td>
+                </tr>";
+                }
+                echo $temp;
+            ?>
 
         </tbody>
     </table>
     <?php
-    require_once("inc/footer.php");
+        require_once("inc/footer.php");
     ?>
 </body>
 
