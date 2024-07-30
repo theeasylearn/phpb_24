@@ -24,6 +24,9 @@ require_once('inc/header-part.php');
             </tr>
         </thead>
         <tbody>
+        <?php 
+            //select title,classtime,(select sum(amount) from lecture l where batchid=b.id and payoutid is null) as 'unpaid_amount',(select sum(amount) from lecture l where batchid=b.id and payoutid is not null) as 'paid_amount' from batch b, course c where b.courseid=c.id
+        ?>
             <tr>
                 <td>1</td>
                 <td>P.S.I</td>

@@ -38,20 +38,20 @@ require_once('inc/header-part.php');
             <?php
                 while ($row = $cmd->fetch()) {
             ?>
-                    <tr>
-                        <td><?php echo $row['id'] ?></td>
-                        <td><?php echo $row['title'] ?></td>
-                        <td><?php echo $row['fees'] ?></td>
-                        <td><?php echo $row['duration'] ?> Days</td>
-                        <td><?php echo $row['description'] ?></td>
-                        <td>
-                            <a href=""><i class="fa fa-pencil fa-2x"></i></a>
-                            <a href=""><i class="fa fa-trash fa-2x"></i></a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $row['title'] ?></td>
+                    <td><?php echo $row['fees'] ?></td>
+                    <td><?php echo $row['duration'] ?> Days</td>
+                    <td><?php echo $row['description'] ?></td>
+                    <td>
+                        <button type="button"><i class="fa fa-trash fa-2x"></i></button>
+                        <a href=""><i class="fa fa-pencil fa-2x"></i></a>
+                    </td>
+                </tr>
             <?php
-                } //end of while
-            
+            } //end of while
+
             ?>
         </tbody>
     </table>

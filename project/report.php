@@ -10,11 +10,10 @@
         require_once('inc/menu.php');
         if(isset($_POST['submit'])==true)
         {
-            echo "it is input submit";
             extract($_POST);
             try 
             {
-                $sql = "SELECT * FROM `lecture` where lecturedate>=? and lecturedate<=? and batchid=?";
+                $sql = "SELECT l.id as id,lecturedate,amount,duration,payoutid,name,title FROM `lecture` l,teacher t,subject s where teacherid=t.id and subjectid=s.id and lecturedate>=? and lecturedate<=? and batchid=?";
                 $cmd = $db->prepare($sql);
                 $cmd->bindParam(1,$startdate);
                 $cmd->bindParam(2,$enddate);
@@ -25,7 +24,7 @@
             catch(PDOException $error)
             {
                 LogError($error);
-                require_once("message.php");
+                require_once("inc/message.php");
             }
         }
     ?>
@@ -73,16 +72,20 @@
         <tbody>
             <?php 
                 $temp = '';
+                require_once("inc/common_functions.php");
                 foreach($table as $row)
                 {
-                    $temp+= "<tr>
-                    <td>1</td>
-                    <td>15-07-2024</td>
-                    <td>Ghanshyam pandye</td>
-                    <td>History</td>
-                    <td>120 Minute</td>
-                    <td>1000</td>
-                    <td>No</td>
+                    extract($row);
+                    $lecturedate = toDMY($lecturedate);
+                    $isPaid = ($payoutid==null)? "No" : "Yes";
+                    $temp.= "<tr>
+                    <td>$id</td>
+                    <td>$lecturedate</td>
+                    <td>$name</td>
+                    <td>$title</td>
+                    <td>$duration Minute</td>
+                    <td>$amount</td>
+                    <td>$isPaid</td>
                 </tr>";
                 }
                 echo $temp;
