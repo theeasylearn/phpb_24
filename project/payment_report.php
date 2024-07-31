@@ -1,5 +1,6 @@
 <?php
-require_once('inc/header-part.php');
+    require_once('inc/header-part.php');
+    require_once('inc/connection.php');
 ?>
 </head>
 
@@ -13,7 +14,7 @@ require_once('inc/header-part.php');
     </div>
     <table id="data">
         <thead>
-      
+
             <tr>
                 <th>Sr No</th>
                 <th>Course</th>
@@ -24,17 +25,34 @@ require_once('inc/header-part.php');
             </tr>
         </thead>
         <tbody>
-        <?php 
-            //select title,classtime,(select sum(amount) from lecture l where batchid=b.id and payoutid is null) as 'unpaid_amount',(select sum(amount) from lecture l where batchid=b.id and payoutid is not null) as 'paid_amount' from batch b, course c where b.courseid=c.id
-        ?>
-            <tr>
-                <td>1</td>
-                <td>P.S.I</td>
-                <td>7 to 9</td>
-                <td>50000</td>
-                <td>30000</td>
-                <td>80000</td>
-            </tr>
+            <?php
+            try {
+                $sql = "select title,classtime,(select sum(amount) from lecture l where batchid=b.id and payoutid is null) as 'unpaid_amount',(select sum(amount) from lecture l where batchid=b.id and payoutid is not null) as 'paid_amount' from batch b, course c where b.courseid=c.id";
+                $cmd = $db->prepare($sql);
+                $cmd->execute();
+                $table = $cmd->fetchAll();
+                $temp = '';
+                $srno=1;
+                foreach ($table as $row) {
+                    extract($row);
+                    $total = $paid_amount + $unpaid_amount;
+                    $temp .= " <tr>
+                <td>$srno</td>
+                <td>$title</td>
+                <td>$classtime</td>
+                <td>$paid_amount</td>
+                <td>$unpaid_amount</td>
+                <td>$total</td>
+            </tr>";
+                    $srno++;
+                }
+                echo $temp;
+            } catch (PDOException $error) {
+                LogError($error);
+                require_once("inc/message.php");
+            }
+            ?>
+
 
         </tbody>
     </table>

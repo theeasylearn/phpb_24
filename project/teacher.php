@@ -1,14 +1,25 @@
 <?php
-    session_start();
-    require_once('inc/header-part.php');
+session_start();
+require_once('inc/header-part.php');
+require_once('inc/connection.php');
 ?>
 <link rel="stylesheet" href="dist/css/lightbox.min.css">
 </head>
 
 <body>
     <?php
-        require_once('inc/menu.php');
-        require_once('inc/message.php');
+    require_once('inc/menu.php');
+    require_once('inc/message.php');
+    try {
+        $sql = "select * from teacher order by id desc";
+        $cmd = $db->prepare($sql);
+        $cmd->execute();
+        $table = $cmd->fetchAll(); //fetchAll return multidimensional array, 1st dimension
+        //is for rows and 2nd dimension is for column 
+    } catch (PDOException $error) {
+        LogError($error);
+        require('inc/message.php');
+    }
     ?>
     <div id="heading">
         <h2>Teacher </h2>
@@ -29,24 +40,32 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>1234567890</td>
-                <td>johndoe@example.com</td>
-                <td>Male</td>
-                <td>PhD in Education</td>
-                <td width="50px">10</td>
+            <?php
+             $temp = "";
+             foreach ($table as $row) {
+             extract($row);
+             $temp .= "<tr>
+                <td>$id</td>
+                <td>$name</td>
+                <td>$mobile</td>
+                <td>$email</td>
+                <td>$gender</td>
+                <td>$qualification</td>
+                <td width='50px'>$experience</td>
                 <td>
-                    <a class="example-image-link" href="http://picsum.photos/400" data-lightbox="example-1">
-                        <img class="example-image" src="http://picsum.photos/100" alt="Teacher Photo" width="50px" />
+                    <a class='example-image-link' href='http://picsum.photos/400' data-lightbox='example-1'>
+                        <img class='example-image' src='photo/$photo' alt='Teacher Photo' width='50px' />
                     </a>
                 </td>
-                <td width="95px">
-                    <a href=""><i class="fa fa-pencil fa-2x"></i></a>
-                    <a href=""><i class="fa fa-trash fa-2x"></i></a>
+                <td width='95px'>
+                    <a href='edit_teacher.php?teacherid=$id'><i class='fa fa-pencil fa-2x'></i></a>
+                    <a href=''><i class='fa fa-trash fa-2x'></i></a>
                 </td>
-            </tr>
+            </tr>";
+
+             }
+             echo $temp;    
+            ?>
             <!-- Additional rows can be added here -->
         </tbody>
     </table>
