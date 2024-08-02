@@ -11,7 +11,7 @@ require_once('inc/connection.php');
     require_once('inc/menu.php');
     require_once('inc/message.php');
     try {
-        $sql = "select * from teacher order by id desc";
+        $sql = "select * from teacher where isdeleted=0 order by id desc";
         $cmd = $db->prepare($sql);
         $cmd->execute();
         $table = $cmd->fetchAll(); //fetchAll return multidimensional array, 1st dimension
@@ -59,7 +59,7 @@ require_once('inc/connection.php');
                 </td>
                 <td width='95px'>
                     <a href='edit_teacher.php?teacherid=$id'><i class='fa fa-pencil fa-2x'></i></a>
-                    <a href=''><i class='fa fa-trash fa-2x'></i></a>
+                    <a href='delete_teacher.php?teacherid=$id'><i class='fa fa-trash fa-2x'></i></a>
                 </td>
             </tr>";
 

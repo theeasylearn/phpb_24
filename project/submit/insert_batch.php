@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("../inc/connection.php");
-var_dump($_POST);
+// var_dump($_POST);
 try {
     //prepare query 
     $sql = 'insert into batch (courseid,startdate,enddate,classtime) values (?,?,?,?)';
