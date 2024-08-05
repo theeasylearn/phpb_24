@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'vendor/autoload.php';
+require_once('inc/verify_login.php');
 require_once('inc/connection.php');
 require_once('inc/header-part.php');
 ?>

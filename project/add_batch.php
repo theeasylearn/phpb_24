@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('inc/verify_login.php');
 require_once("inc/connection.php");
 require_once('inc/header-part.php');
 ?>
@@ -7,13 +8,13 @@ require_once('inc/header-part.php');
 
 <body>
     <?php
-         require_once('inc/menu.php');
+    require_once('inc/menu.php');
     ?>
     <div id="heading">
         <h2>Batch - Add batch</h2>
         <a href="batch.php" class="btn">Back</a>
     </div>
-    <form action="submit/insert_batch.php" method="post" >
+    <form action="submit/insert_batch.php" method="post">
         <table id="data">
             <tbody>
                 <tr>

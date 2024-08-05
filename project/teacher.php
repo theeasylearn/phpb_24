@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('inc/verify_login.php');
 require_once('inc/header-part.php');
 require_once('inc/connection.php');
 ?>
@@ -41,10 +42,10 @@ require_once('inc/connection.php');
         </thead>
         <tbody>
             <?php
-             $temp = "";
-             foreach ($table as $row) {
-             extract($row);
-             $temp .= "<tr>
+            $temp = "";
+            foreach ($table as $row) {
+                extract($row);
+                $temp .= "<tr>
                 <td>$id</td>
                 <td>$name</td>
                 <td>$mobile</td>
@@ -62,9 +63,8 @@ require_once('inc/connection.php');
                     <a href='delete_teacher.php?teacherid=$id'><i class='fa fa-trash fa-2x'></i></a>
                 </td>
             </tr>";
-
-             }
-             echo $temp;    
+            }
+            echo $temp;
             ?>
             <!-- Additional rows can be added here -->
         </tbody>

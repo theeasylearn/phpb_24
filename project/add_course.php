@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once('inc/verify_login.php');
 require_once('inc/header-part.php');
 ?>
 </head>
@@ -43,7 +45,7 @@ require_once('inc/header-part.php');
                         <input type="reset" value="Clear all" class="clear" />
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
     </form>

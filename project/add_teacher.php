@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('inc/verify_login.php');
 require_once("inc/connection.php");
 require_once('inc/header-part.php');
 ?>
@@ -13,8 +14,7 @@ require_once('inc/header-part.php');
         <h2>Teacher - Add Teacher</h2>
         <a href="teacher.php" class="btn">Back</a>
     </div>
-    <form action="submit/insert_teacher.php" method="post"
-    enctype="multipart/form-data">
+    <form action="submit/insert_teacher.php" method="post" enctype="multipart/form-data">
         <table id="data">
             <tbody>
                 <tr>
